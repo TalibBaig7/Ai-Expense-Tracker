@@ -21,7 +21,7 @@ const ActionCard = ({ title, description, icon: Icon, accentGradient, accentText
     <button
         onClick={onClick}
         disabled={generating}
-        className="group relative overflow-hidden bg-white rounded-3xl border border-slate-100 p-6 text-left hover:border-slate-200 hover:shadow-md transition disabled:opacity-60 disabled:cursor-not-allowed"
+        className="group relative overflow-hidden bg-white rounded-3xl border border-slate-100 p-4 sm:p-6 text-left hover:border-slate-200 hover:shadow-md transition disabled:opacity-60 disabled:cursor-not-allowed"
     >
         <div className="flex items-start justify-between mb-4">
             <div className={`h-14 w-14 rounded-2xl bg-linear-to-br ${accentGradient} flex items-center justify-center group-hover:scale-105 transition shadow-sm`}>
@@ -111,13 +111,13 @@ const Insights = () => {
     return (
         <div className="space-y-6">
             <div>
-                <h1 className="text-3xl font-bold text-slate-900 tracking-tight">AI Insights</h1>
+                <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">AI Insights</h1>
                 <p className="text-sm text-slate-500 mt-1.5">
                     Personalized financial analysis powered by Gemini — generate insights and watch your money smarter
                 </p>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                 <KpiCard
                     label="Insights generated"
                     value={stats.total}

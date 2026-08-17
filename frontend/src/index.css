@@ -30,3 +30,16 @@ body {
     from { transform: translateY(-33.3333%); }
     to { transform: translateY(0); }
 }
+
+@keyframes slideInFromLeft {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+.mobile-drawer-enter {
+    animation: slideInFromLeft 0.2s ease-out;
+}
+
+.safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+}

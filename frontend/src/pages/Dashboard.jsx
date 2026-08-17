@@ -61,11 +61,11 @@ const Dashboard = () => {
     return (
         <div className="space-y-6">
             <div>
-                <h1 className="text-3xl font-bold text-slate-900 tracking-tight">Dashboard</h1>
+                <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">Dashboard</h1>
                 <p className="text-sm text-slate-500 mt-1.5">An overview of your finances this month</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                 <KpiCard
                     label="Balance"
                     value={formatCurrency(summary.balance, currency)}
@@ -95,14 +95,14 @@ const Dashboard = () => {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div className="lg:col-span-2 bg-white rounded-3xl border border-slate-100 p-6">
+                <div className="lg:col-span-2 bg-white rounded-3xl border border-slate-100 p-4 sm:p-6">
                     <div className="mb-5">
                         <h2 className="text-lg font-bold text-slate-900 tracking-tight">Monthly Trend</h2>
                         <p className="text-xs text-slate-500 mt-1">Income vs expenses, last 6 months</p>
                     </div>
                     <MonthlyTrendChart data={trend} currency={currency} />
                 </div>
-                <div className="bg-white rounded-3xl border border-slate-100 p-6">
+                <div className="bg-white rounded-3xl border border-slate-100 p-4 sm:p-6">
                     <div className="mb-5">
                         <h2 className="text-lg font-bold text-slate-900 tracking-tight">Top Categories</h2>
                         <p className="text-xs text-slate-500 mt-1">Spending this month</p>
@@ -112,7 +112,7 @@ const Dashboard = () => {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                <div className="lg:col-span-7 bg-white rounded-3xl border border-slate-100 p-6">
+                <div className="lg:col-span-7 bg-white rounded-3xl border border-slate-100 p-4 sm:p-6">
                     <div className="mb-5 flex items-center justify-between">
                         <h2 className="text-lg font-bold text-slate-900 tracking-tight">Recent Transactions</h2>
                         <Link
@@ -154,7 +154,7 @@ const Dashboard = () => {
                     )}
                 </div>
 
-                <div className="lg:col-span-5 bg-white rounded-3xl border border-slate-100 p-6">
+                <div className="lg:col-span-5 bg-white rounded-3xl border border-slate-100 p-4 sm:p-6">
                     <div className="mb-5 flex items-center justify-between">
                         <h2 className="text-lg font-bold text-slate-900 tracking-tight">Budget Status</h2>
                         <Link
