@@ -184,18 +184,18 @@ const Budgets = () => {
                                         icon={b.category_icon}
                                         color={b.category_color}
                                     />
-                                    <div className="flex items-center gap-1">
+                                    <div className="flex items-center gap-2">
                                         <button
                                             onClick={() => onEdit(b)}
-                                            className="p-1.5 hover:bg-slate-100 rounded-md text-slate-500 transition"
+                                            className="h-9 w-9 flex items-center justify-center rounded-xl text-slate-500 hover:bg-slate-100 transition"
                                         >
-                                            <Pencil size={14} />
+                                            <Pencil size={16} />
                                         </button>
                                         <button
                                             onClick={() => onDelete(b.id)}
-                                            className="p-1.5 hover:bg-rose-50 rounded-md text-rose-500 transition"
+                                            className="h-9 w-9 flex items-center justify-center rounded-xl text-rose-500 hover:bg-rose-50 transition"
                                         >
-                                            <Trash2 size={14} />
+                                            <Trash2 size={16} />
                                         </button>
                                     </div>
                                 </div>

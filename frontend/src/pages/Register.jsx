@@ -54,7 +54,7 @@ const Register = () => {
 
                 <div className="flex-1 flex items-center justify-center py-10">
                     <div className="w-full max-w-md">
-                        <h2 className="text-4xl font-bold text-slate-900 tracking-tight mb-2">Sign Up</h2>
+                        <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight mb-2">Sign Up</h2>
                         <p className="text-slate-500 mb-10">Create your account in seconds</p>
 
                         <form onSubmit={onSubmit} className="space-y-5">

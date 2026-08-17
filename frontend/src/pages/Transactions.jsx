@@ -541,7 +541,7 @@ const Transactions = () => {
                   });
                   setPage(1);
                 }}
-                className={`px-4 py-1.5 rounded-full text-sm font-medium transition flex items-center gap-2 ${
+                className={`px-3 py-2 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium transition flex items-center gap-1.5 ${
                   filters.type === tab.value
                     ? "bg-white shadow-sm text-slate-900"
                     : "text-slate-600 hover:text-slate-900"
@@ -550,7 +550,7 @@ const Transactions = () => {
                 {tab.label}
 
                 <span
-                  className={`text-xs px-1.5 py-0.5 rounded-full font-semibold ${tab.badge}`}
+                  className={`text-[10px] sm:text-xs px-1.5 py-0.5 rounded-full font-semibold ${tab.badge}`}
                 >
                   {tab.count}
                 </span>
@@ -630,7 +630,7 @@ const Transactions = () => {
                         {formatDate(t.transaction_date)}
                       </p>
                     </div>
-                    <div className="flex items-center gap-1 shrink-0">
+                    <div className="flex items-center gap-2 shrink-0">
                       <StatusPill
                         variant={t.type === "income" ? "income" : "expense"}
                       >
@@ -638,15 +638,15 @@ const Transactions = () => {
                       </StatusPill>
                       <button
                         onClick={() => onEdit(t)}
-                        className="p-1.5 hover:bg-slate-100 rounded-md text-slate-500 transition"
+                        className="h-9 w-9 flex items-center justify-center rounded-xl text-slate-500 hover:bg-slate-100 transition"
                       >
-                        <Pencil size={14} />
+                        <Pencil size={16} />
                       </button>
                       <button
                         onClick={() => onDelete(t.id)}
-                        className="p-1.5 hover:bg-rose-50 rounded-md text-rose-500 transition"
+                        className="h-9 w-9 flex items-center justify-center rounded-xl text-rose-500 hover:bg-rose-50 transition"
                       >
-                        <Trash2 size={14} />
+                        <Trash2 size={16} />
                       </button>
                     </div>
                   </div>
@@ -716,16 +716,16 @@ const Transactions = () => {
                       <div className="flex items-center justify-end gap-1">
                         <button
                           onClick={() => onEdit(t)}
-                          className="p-1.5 hover:bg-slate-100 rounded-md text-slate-500 transition"
+                          className="h-9 w-9 flex items-center justify-center rounded-xl text-slate-500 hover:bg-slate-100 transition"
                         >
-                          <Pencil size={14} />
+                          <Pencil size={16} />
                         </button>
 
                         <button
                           onClick={() => onDelete(t.id)}
-                          className="p-1.5 hover:bg-rose-50 rounded-md text-rose-500 transition"
+                          className="h-9 w-9 flex items-center justify-center rounded-xl text-rose-500 hover:bg-rose-50 transition"
                         >
-                          <Trash2 size={14} />
+                          <Trash2 size={16} />
                         </button>
                       </div>
                     </td>

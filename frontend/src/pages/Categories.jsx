@@ -101,19 +101,19 @@ const Categories = () => {
                                         className="bg-white rounded-2xl border border-slate-100 shadow-sm p-4 flex items-center justify-between"
                                     >
                                         <CategoryBadge name={c.name} icon={c.icon} color={c.color} />
-                                        <div className="flex items-center gap-1.5">
+                                        <div className="flex items-center gap-2">
                                             {c.is_default && <StatusPill variant="neutral">default</StatusPill>}
                                             <button
                                                 onClick={() => onEdit(c)}
-                                                className="p-1.5 hover:bg-slate-100 rounded-md text-slate-500 transition"
+                                                className="h-9 w-9 flex items-center justify-center rounded-xl text-slate-500 hover:bg-slate-100 transition"
                                             >
-                                                <Pencil size={14} />
+                                                <Pencil size={16} />
                                             </button>
                                             <button
                                                 onClick={() => onDelete(c.id)}
-                                                className="p-1.5 hover:bg-rose-50 rounded-md text-rose-500 transition"
+                                                className="h-9 w-9 flex items-center justify-center rounded-xl text-rose-500 hover:bg-rose-50 transition"
                                             >
-                                                <Trash2 size={14} />
+                                                <Trash2 size={16} />
                                             </button>
                                         </div>
                                     </div>

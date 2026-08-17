@@ -73,7 +73,7 @@ const CategoryForm = ({ initial, onSaved, onCancel }) => {
 
             <div>
                 <label className="block text-sm font-medium text-slate-700 mb-2">Icon</label>
-                <div className="grid grid-cols-8 gap-2">
+                <div className="grid grid-cols-5 sm:grid-cols-8 gap-2">
                     {ICONS.map((name) => {
                         const Icon = lucideIconByName(name);
                         const selected = form.icon === name;
@@ -82,7 +82,7 @@ const CategoryForm = ({ initial, onSaved, onCancel }) => {
                                 key={name}
                                 type="button"
                                 onClick={() => setForm({ ...form, icon: name })}
-                                className={`h-10 rounded-lg border flex items-center justify-center transition ${
+                                className={`h-11 rounded-xl border flex items-center justify-center transition ${
                                     selected
                                         ? 'border-violet-500 bg-violet-50 text-violet-700'
                                         : 'border-slate-200 text-slate-600 hover:border-slate-300'
@@ -103,7 +103,7 @@ const CategoryForm = ({ initial, onSaved, onCancel }) => {
                             key={color}
                             type="button"
                             onClick={() => setForm({ ...form, color })}
-                            className={`h-8 w-8 rounded-full transition ring-offset-2 ${
+                            className={`h-9 w-9 rounded-full transition ring-offset-2 ${
                                 form.color === color ? 'ring-2 ring-slate-900' : 'ring-0'
                             }`}
                             style={{ backgroundColor: color }}
