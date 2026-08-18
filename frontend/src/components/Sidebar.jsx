@@ -27,7 +27,7 @@ const navLinkClass = ({ isActive }) =>
     }`;
 
 const bottomNavLinkClass = ({ isActive }) =>
-    `flex flex-col items-center justify-center gap-1 flex-1 py-2.5 text-[11px] sm:text-xs font-semibold transition ${
+    `flex flex-col items-center justify-center gap-1.5 flex-1 py-2.5 text-xs font-bold transition ${
         isActive ? 'text-violet-600' : 'text-slate-500'
     }`;
 
@@ -85,8 +85,8 @@ const SidebarNav = ({ onNavigate }) => (
 );
 
 export const MobileBottomNav = () => (
-    <nav className="fixed bottom-0 inset-x-0 z-30 bg-white/95 backdrop-blur-md border-t border-slate-200 lg:hidden safe-area-bottom shadow-[0_-2px_10px_rgba(0,0,0,0.05)]">
-        <div className="flex items-stretch px-1 pt-1 pb-2">
+    <nav className="fixed bottom-0 inset-x-0 z-50 bg-white border-t border-slate-200 lg:hidden safe-area-bottom shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
+        <div className="flex items-stretch px-0.5 pt-2 pb-2">
             {navItems.map(({ to, label, shortLabel, icon: Icon }) => (
                 <NavLink
                     key={to}
@@ -97,13 +97,13 @@ export const MobileBottomNav = () => (
                     {({ isActive }) => (
                         <>
                             <div
-                                className={`h-10 w-10 rounded-2xl flex items-center justify-center transition ${
-                                    isActive ? 'bg-violet-50 text-violet-600' : 'text-slate-500'
+                                className={`h-11 w-11 rounded-2xl flex items-center justify-center transition ${
+                                    isActive ? 'bg-violet-100 text-violet-700' : 'text-slate-500'
                                 }`}
                             >
-                                <Icon size={20} strokeWidth={isActive ? 2.5 : 2} />
+                                <Icon size={22} strokeWidth={isActive ? 2.5 : 2} />
                             </div>
-                            <span className="truncate max-w-full px-0.5">{shortLabel || label}</span>
+                            <span className="truncate max-w-full">{shortLabel || label}</span>
                         </>
                     )}
                 </NavLink>
