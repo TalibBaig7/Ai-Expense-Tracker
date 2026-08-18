@@ -24,7 +24,7 @@ const Topbar = ({ onMenuClick }) => {
             <div className="flex items-center gap-3 min-w-0">
                 <button
                     onClick={onMenuClick}
-                    className="lg:hidden h-9 w-9 rounded-xl text-slate-600 hover:bg-slate-100 flex items-center justify-center transition shrink-0"
+                    className="lg:hidden h-10 w-10 rounded-xl text-slate-600 bg-slate-100 hover:bg-slate-200 flex items-center justify-center transition shrink-0"
                     aria-label="Open menu"
                 >
                     <Menu size={20} />
