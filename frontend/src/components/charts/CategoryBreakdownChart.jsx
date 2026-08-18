@@ -13,7 +13,7 @@ const GRADIENTS = [
 const CategoryBreakdownChart = ({ data, currency }) => {
     if (!data || data.length === 0) {
         return (
-            <div className="flex items-center justify-center h-64 text-sm text-slate-400">
+            <div className="flex items-center justify-center h-40 sm:h-64 text-sm text-slate-400">
                 No expenses yet
             </div>
         );
@@ -32,7 +32,7 @@ const CategoryBreakdownChart = ({ data, currency }) => {
 
     return (
         <div>
-            <div className="h-44">
+            <div className="h-40 sm:h-44">
                 <ResponsiveContainer width="100%" height="100%">
                     <PieChart>
                         <defs>

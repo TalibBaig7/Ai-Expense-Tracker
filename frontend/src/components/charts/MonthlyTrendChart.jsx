@@ -13,7 +13,7 @@ import { formatMonth, formatCurrency } from '../../utils/format.js';
 const MonthlyTrendChart = ({ data, currency }) => {
     if (!data || data.length === 0) {
         return (
-            <div className="flex items-center justify-center h-64 text-sm text-slate-400">
+            <div className="flex items-center justify-center h-40 sm:h-64 text-sm text-slate-400">
                 No data yet
             </div>
         );
@@ -26,7 +26,7 @@ const MonthlyTrendChart = ({ data, currency }) => {
     }));
 
     return (
-        <div className="h-72">
+        <div className="h-56 sm:h-72">
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={formatted} barCategoryGap="35%" barGap={6}>
                     <defs>

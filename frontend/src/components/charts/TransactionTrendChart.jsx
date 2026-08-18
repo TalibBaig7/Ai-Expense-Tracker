@@ -13,14 +13,14 @@ import { formatCurrency } from '../../utils/format.js';
 const TransactionTrendChart = ({ data, currency, interval = 3 }) => {
     if (!data || data.length === 0) {
         return (
-            <div className="flex items-center justify-center h-64 text-sm text-slate-400">
+            <div className="flex items-center justify-center h-40 sm:h-64 text-sm text-slate-400">
                 No data yet
             </div>
         );
     }
 
     return (
-        <div className="h-64">
+        <div className="h-56 sm:h-64">
             <ResponsiveContainer width="100%" height="100%">
                 <AreaChart data={data} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
                     <defs>
