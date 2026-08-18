@@ -85,7 +85,7 @@ const SidebarNav = ({ onNavigate }) => (
 );
 
 export const MobileBottomNav = () => (
-    <nav className="fixed bottom-0 inset-x-0 z-50 bg-white border-t border-slate-200 lg:hidden safe-area-bottom shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
+    <nav className="fixed bottom-0 inset-x-0 z-50 bg-white border-t border-slate-300 lg:hidden safe-area-bottom shadow-[0_-4px_20px_rgba(0,0,0,0.12)]">
         <div className="flex items-stretch px-0.5 pt-2 pb-2">
             {navItems.map(({ to, label, shortLabel, icon: Icon }) => (
                 <NavLink
@@ -97,11 +97,11 @@ export const MobileBottomNav = () => (
                     {({ isActive }) => (
                         <>
                             <div
-                                className={`h-11 w-11 rounded-2xl flex items-center justify-center transition ${
+                                className={`h-10 w-10 rounded-2xl flex items-center justify-center transition ${
                                     isActive ? 'bg-violet-100 text-violet-700' : 'text-slate-500'
                                 }`}
                             >
-                                <Icon size={22} strokeWidth={isActive ? 2.5 : 2} />
+                                <Icon size={20} strokeWidth={isActive ? 2.5 : 2} />
                             </div>
                             <span className="truncate max-w-full">{shortLabel || label}</span>
                         </>
