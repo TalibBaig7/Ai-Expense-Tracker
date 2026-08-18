@@ -12,11 +12,11 @@ import {
 import { useAuth } from '../context/AuthContext.jsx';
 
 const navItems = [
-    { to: '/', label: 'Dashboard', icon: LayoutDashboard, shortLabel: 'Home' },
-    { to: '/transactions', label: 'Transactions', icon: ArrowLeftRight, shortLabel: 'Txns' },
-    { to: '/categories', label: 'Categories', icon: Folder, shortLabel: 'Cats' },
+    { to: '/', label: 'Dashboard', icon: LayoutDashboard, shortLabel: 'Dashboard' },
+    { to: '/transactions', label: 'Transactions', icon: ArrowLeftRight, shortLabel: 'Transactions' },
+    { to: '/categories', label: 'Categories', icon: Folder, shortLabel: 'Categories' },
     { to: '/budgets', label: 'Budgets', icon: Target, shortLabel: 'Budgets' },
-    { to: '/insights', label: 'AI Insights', icon: Sparkles, shortLabel: 'AI' },
+    { to: '/insights', label: 'AI Insights', icon: Sparkles, shortLabel: 'AI Insights' },
 ];
 
 const navLinkClass = ({ isActive }) =>
@@ -27,7 +27,7 @@ const navLinkClass = ({ isActive }) =>
     }`;
 
 const bottomNavLinkClass = ({ isActive }) =>
-    `flex flex-col items-center justify-center gap-1.5 flex-1 py-2.5 text-xs font-bold transition ${
+    `flex flex-col items-center justify-center gap-1 flex-1 py-2 text-[11px] font-bold transition ${
         isActive ? 'text-violet-600' : 'text-slate-500'
     }`;
 
