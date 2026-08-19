@@ -41,6 +41,14 @@ app.get("/", (req, res) => {
   res.json({ message: "Ai Expense Tracker is Running" });
 });
 
+app.get("/favicon.ico", (req, res) => {
+  res.status(204).end();
+});
+
+app.get("/favicon.png", (req, res) => {
+  res.status(204).end();
+});
+
 app.use("/api/auth", authRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/transactions", transactionRoutes);
