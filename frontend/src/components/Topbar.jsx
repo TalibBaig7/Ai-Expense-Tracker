@@ -1,4 +1,4 @@
-import { Bell, Menu, Search } from 'lucide-react';
+import { Bell, Menu, Search, LogOut } from 'lucide-react';
 import { useAuth } from '../context/AuthContext.jsx';
 
 const greeting = () => {
@@ -16,7 +16,7 @@ const formatToday = () =>
     });
 
 const Topbar = ({ onMenuClick }) => {
-    const { user } = useAuth();
+    const { user, logout } = useAuth();
     const firstName = user?.name?.split(' ')[0] || '';
 
     return (
@@ -50,6 +50,13 @@ const Topbar = ({ onMenuClick }) => {
                 >
                     <Bell size={17} />
                     <span className="absolute top-2 right-2 h-2 w-2 bg-rose-500 rounded-full ring-2 ring-white" />
+                </button>
+                <button
+                    onClick={logout}
+                    title="Logout"
+                    className="lg:hidden h-11 w-11 rounded-full text-slate-500 hover:bg-rose-50 hover:text-rose-600 flex items-center justify-center transition"
+                >
+                    <LogOut size={18} />
                 </button>
             </div>
         </header>

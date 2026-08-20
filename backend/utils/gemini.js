@@ -3,13 +3,24 @@ import { GoogleGenAI } from "@google/genai";
 
 dotenv.config();
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const rawKey = process.env.GEMINI_API_KEY;
+const apiKey = rawKey ? rawKey.trim() : "";
 
-if (!process.env.GEMINI_API_KEY) {
+if (!apiKey) {
   console.error(
-    "⚠️  WARNING: GEMINI_API_KEY is not set. AI features will not work.",
+    "GEMINI_API_KEY is not set. AI features will not work.",
   );
 }
+
+const ai = new GoogleGenAI({ apiKey });
+
+const ensureApiKey = () => {
+  if (!apiKey) {
+    throw new Error(
+      "GEMINI_API_KEY is not configured on the server. AI analysis is unavailable.",
+    );
+  }
+};
 
 const stripMarkdown = (text) => {
   let cleaned = text.trim();
@@ -95,6 +106,7 @@ Constraints:
 - Tone: friendly but honest.`;
 
   try {
+    ensureApiKey();
     const response = await ai.models.generateContent({
       model: "gemini-3.5-flash",
       contents: prompt,
@@ -147,6 +159,7 @@ Severity guide:
 - critical: over 100% spent`;
 
   try {
+    ensureApiKey();
     const response = await ai.models.generateContent({
       model: "gemini-3.5-flash",
       contents: prompt,
@@ -198,6 +211,7 @@ Return ONLY valid JSON (no markdown):
 Provide exactly 4 tips. Each tip should reference an actual category from the data and include a realistic monthly savings estimate.`;
 
   try {
+    ensureApiKey();
     const response = await ai.models.generateContent({
       model: "gemini-3.5-flash",
       contents: prompt,
@@ -254,6 +268,7 @@ Return ONLY valid JSON (no markdown):
 }`;
 
   try {
+    ensureApiKey();
     const response = await ai.models.generateContent({
       model: "gemini-3.5-flash",
       contents: prompt,
@@ -302,6 +317,7 @@ Return ONLY valid JSON (no markdown):
 }`;
 
   try {
+    ensureApiKey();
     const response = await ai.models.generateContent({
       model: "gemini-3.5-flash",
       contents: prompt,
