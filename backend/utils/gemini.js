@@ -105,8 +105,9 @@ Constraints:
 - Reference actual numbers from the data.
 - Tone: friendly but honest.`;
 
+  ensureApiKey();
+
   try {
-    ensureApiKey();
     const response = await ai.models.generateContent({
       model: "gemini-3.5-flash",
       contents: prompt,
@@ -118,7 +119,9 @@ Constraints:
   } catch (error) {
     console.error("Gemini API error (monthly insight):", error);
 
-    throw new Error("Failed to generate monthly insight. Please try again.");
+    throw new Error(
+      `Failed to generate monthly insight: ${error.message || "please try again."}`,
+    );
   }
 };
 
@@ -158,8 +161,9 @@ Severity guide:
 - warning: 70-100% spent
 - critical: over 100% spent`;
 
+  ensureApiKey();
+
   try {
-    ensureApiKey();
     const response = await ai.models.generateContent({
       model: "gemini-3.5-flash",
       contents: prompt,
@@ -169,7 +173,9 @@ Severity guide:
     return JSON.parse(cleaned);
   } catch (error) {
     console.error("Gemini API error (budget alert):", error);
-    throw new Error("Failed to generate budget alert.");
+    throw new Error(
+      `Failed to generate budget alert: ${error.message || "please try again."}`,
+    );
   }
 };
 
@@ -210,8 +216,9 @@ Return ONLY valid JSON (no markdown):
 
 Provide exactly 4 tips. Each tip should reference an actual category from the data and include a realistic monthly savings estimate.`;
 
+  ensureApiKey();
+
   try {
-    ensureApiKey();
     const response = await ai.models.generateContent({
       model: "gemini-3.5-flash",
       contents: prompt,
@@ -221,7 +228,9 @@ Provide exactly 4 tips. Each tip should reference an actual category from the da
     return JSON.parse(cleaned);
   } catch (error) {
     console.error("Gemini API error (savings tips):", error);
-    throw new Error("Failed to generate savings tips.");
+    throw new Error(
+      `Failed to generate savings tips: ${error.message || "please try again."}`,
+    );
   }
 };
 
@@ -267,8 +276,9 @@ Return ONLY valid JSON (no markdown):
   "highlight": "Single short phrase capturing the key takeaway (e.g., 'Heavy on dining', 'Stable income', 'Dining overspend')"
 }`;
 
+  ensureApiKey();
+
   try {
-    ensureApiKey();
     const response = await ai.models.generateContent({
       model: "gemini-3.5-flash",
       contents: prompt,
@@ -278,7 +288,9 @@ Return ONLY valid JSON (no markdown):
     return JSON.parse(cleaned);
   } catch (error) {
     console.error("Gemini API error (analyze transactions):", error);
-    throw new Error("Failed to analyze transactions.");
+    throw new Error(
+      `Failed to analyze transactions: ${error.message || "please try again."}`,
+    );
   }
 };
 
@@ -316,8 +328,9 @@ Return ONLY valid JSON (no markdown):
   ]
 }`;
 
+  ensureApiKey();
+
   try {
-    ensureApiKey();
     const response = await ai.models.generateContent({
       model: "gemini-3.5-flash",
       contents: prompt,
@@ -327,7 +340,9 @@ Return ONLY valid JSON (no markdown):
     return JSON.parse(cleaned);
   } catch (error) {
     console.error("Gemini API error (analyze budgets):", error);
-    throw new Error("Failed to analyze budgets.");
+    throw new Error(
+      `Failed to analyze budgets: ${error.message || "please try again."}`,
+    );
   }
 };
 

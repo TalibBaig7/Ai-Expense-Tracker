@@ -255,8 +255,6 @@ const Transactions = () => {
     return [];
   }, [allTransactions, timeRange]);
 
-  const chartInterval = timeRange === "30d" ? 3 : timeRange === "3m" ? 10 : 0;
-
   const totalPages = Math.max(
     1,
     Math.ceil((transactions || []).length / PAGE_SIZE),
@@ -419,11 +417,7 @@ const Transactions = () => {
           </div>
         </div>
 
-        <TransactionTrendChart
-          data={trendData}
-          currency={currency}
-          interval={chartInterval}
-        />
+        <TransactionTrendChart data={trendData} currency={currency} />
       </div>
 
       <div className="bg-white rounded-3xl border border-slate-100 p-4 sm:p-5">

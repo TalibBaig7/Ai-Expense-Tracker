@@ -10,7 +10,7 @@ import {
 } from 'recharts';
 import { formatCurrency } from '../../utils/format.js';
 
-const TransactionTrendChart = ({ data, currency, interval = 0 }) => {
+const TransactionTrendChart = ({ data, currency }) => {
     if (!data || data.length === 0) {
         return (
             <div className="flex items-center justify-center h-40 sm:h-64 text-sm text-slate-400">
@@ -18,13 +18,6 @@ const TransactionTrendChart = ({ data, currency, interval = 0 }) => {
             </div>
         );
     }
-
-    const tickInterval =
-        interval > 0
-            ? interval
-            : data.length > 7
-              ? Math.ceil(data.length / 6)
-              : 0;
 
     return (
         <div className="h-56 sm:h-64">
@@ -46,7 +39,9 @@ const TransactionTrendChart = ({ data, currency, interval = 0 }) => {
                         tick={{ fill: '#6b7280', fontSize: 11 }}
                         tickLine={false}
                         axisLine={false}
-                        interval={tickInterval}
+                        interval="preserveStartEnd"
+                        minTickGap={24}
+                        tickMargin={8}
                     />
                     <YAxis
                         tick={{ fill: '#6b7280', fontSize: 11 }}
