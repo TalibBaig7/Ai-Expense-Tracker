@@ -25,7 +25,7 @@ const Modal = ({ open, onClose, title, children, size = 'md' }) => {
     if (!open) return null;
 
     return (
-        <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center sm:p-4">
+        <div className="fixed inset-0 z-60 flex items-end sm:items-center justify-center sm:p-4">
             <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm" onClick={onClose} />
             <div className={`relative bg-white rounded-t-2xl sm:rounded-2xl shadow-xl w-full ${sizeClasses[size]} max-h-[92vh] sm:max-h-[90vh] flex flex-col`}>
                 <div className="flex items-center justify-between p-4 sm:p-5 border-b border-slate-100 shrink-0">
