@@ -3,6 +3,9 @@ export const API_PATHS = {
         REGISTER: '/auth/register',
         LOGIN: '/auth/login',
         ME: '/auth/me',
+        FORGOT_PASSWORD: '/auth/forgot-password',
+        VERIFY_RESET_OTP: '/auth/verify-reset-otp',
+        RESET_PASSWORD: '/auth/reset-password',
     },
     CATEGORIES: {
         LIST: '/categories',
